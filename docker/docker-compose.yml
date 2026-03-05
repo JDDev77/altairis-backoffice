@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: altairis_db
+    environment:
+      POSTGRES_DB: altairis
+      POSTGRES_USER: altairis
+      POSTGRES_PASSWORD: altairis
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
